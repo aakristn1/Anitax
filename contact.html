@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Anitax</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="Logo/assets_task_01jvrzgztrf6vvydthxfwr6ad3_1747816383_img_3.webp" alt="Anitax Logo">
+                    <h1>Anitax</h1>
+                </div>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#our-approach">Our Approach</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? Reach out to our team of accounting professionals.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-form fade-in">
+                    <h3>Send Us a Message</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info fade-in">
+                    <h3>Get in Touch</h3>
+                    <p>Our team of accounting experts is ready to help you with all your financial needs.</p>
+                    
+                    <div class="contact-card">
+                        <h4>Working Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                        <p>Saturday - Sunday: Closed</p>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                0800 123 4567
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email:</strong><br>
+                                info@anitax.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div>
+                                <strong>Company:</strong><br>
+                                Remote-first startup
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Consultation Booking Widget (Replacing Map) -->
+            <div class="consultation-widget">
+                <div class="consultation-header">
+                    <h3>Book a Free Consultation</h3>
+                    <p>Schedule a 30-minute free consultation with one of our accounting experts</p>
+                </div>
+                <div class="consultation-body">
+                    <div class="consultation-form">
+                        <div class="form-group">
+                            <label for="consult-service">Service of Interest</label>
+                            <select id="consult-service" name="consult-service" class="form-control">
+                                <option value="">Select a Service</option>
+                                <option value="financial-accounting">Financial Accounting</option>
+                                <option value="tax-planning">Tax Planning</option>
+                                <option value="startup-advisory">Startup Advisory</option>
+                                <option value="payroll">Payroll Services</option>
+                                <option value="forecasting">Financial Forecasting</option>
+                                <option value="digital">Digital Transformation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="consult-date">Preferred Date</label>
+                            <input type="date" id="consult-date" name="consult-date" class="form-control" required>
+                        </div>
+                        <div class="form-group time-slots">
+                            <label>Preferred Time</label>
+                            <div class="time-slot-options">
+                                <div class="time-slot">
+                                    <input type="radio" id="time-1" name="time-slot" value="9:00">
+                                    <label for="time-1">9:00 AM</label>
+                                </div>
+                                <div class="time-slot">
+                                    <input type="radio" id="time-2" name="time-slot" value="11:00">
+                                    <label for="time-2">11:00 AM</label>
+                                </div>
+                                <div class="time-slot">
+                                    <input type="radio" id="time-3" name="time-slot" value="13:00">
+                                    <label for="time-3">1:00 PM</label>
+                                </div>
+                                <div class="time-slot">
+                                    <input type="radio" id="time-4" name="time-slot" value="15:00">
+                                    <label for="time-4">3:00 PM</label>
+                                </div>
+                                <div class="time-slot">
+                                    <input type="radio" id="time-5" name="time-slot" value="16:30">
+                                    <label for="time-5">4:30 PM</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-block">Schedule Consultation</button>
+                    </div>
+                    <div class="consultation-benefits">
+                        <h4>What you'll get:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Personalised advice for your startup</li>
+                            <li><i class="fas fa-check"></i> Initial financial assessment</li>
+                            <li><i class="fas fa-check"></i> Tailored recommendations</li>
+                            <li><i class="fas fa-check"></i> No obligation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our accounting services.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How much do your accounting services cost?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our pricing varies depending on the specific services required and the size of your startup. We offer customised packages to meet your needs, and we'd be happy to provide a detailed quote after our free consultation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you work with very early-stage startups?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We specialise in helping startups at all stages, from pre-seed to scale-up. Our services are tailored to meet the unique needs of early-stage companies, and we can scale our solutions as your business grows.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can you help with investor relations and fundraising?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide comprehensive support for startups seeking investment, including preparation of financial projections, due diligence assistance, and creation of investor-ready financial materials. Our team has experience working with VC-backed startups across various sectors.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How does your remote-first approach work?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>As a remote-first company, we operate entirely online, using secure digital tools and platforms to collaborate with our clients. We conduct meetings via video conferencing, use cloud-based accounting software, and maintain regular communication through your preferred channels. This approach gives us the flexibility to serve clients across the UK while keeping our costs competitive.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anitax</h3>
+                    <p>Innovative accounting solutions for startups and growing businesses.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#our-approach">Our Approach</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Financial Accounting</a></li>
+                        <li><a href="index.html#services">Tax Planning</a></li>
+                        <li><a href="index.html#services">Startup Advisory</a></li>
+                        <li><a href="index.html#services">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> 0800 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@anitax.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-5PM</li>
+                        <li><i class="fas fa-globe"></i> Remote-first company</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Anitax. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navbar = document.getElementById('navbar');
+        
+        mobileToggle.addEventListener('click', function() {
+            navbar.classList.toggle('active');
+        });
+
+        // FAQ Toggles
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                
+                // Close other open FAQ items
+                document.querySelectorAll('.faq-item.active').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Date min attribute (prevent past dates)
+        const dateInput = document.getElementById('consult-date');
+        if (dateInput) {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const formattedToday = `${yyyy}-${mm}-${dd}`;
+            dateInput.setAttribute('min', formattedToday);
+        }
+    </script>
+</body>
+</html>
