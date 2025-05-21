@@ -556,6 +556,29 @@ nav ul li a.active::after {
     outline: none;
 }
 
+.form-result {
+    margin-top: 20px;
+}
+
+.alert {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.alert.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    border-left: 4px solid #4CAF50;
+    color: #2e7d32;
+}
+
+.alert.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    border-left: 4px solid #F44336;
+    color: #c62828;
+}
+
 .contact-card {
     background-color: var(--bg-alt);
     padding: 30px;
