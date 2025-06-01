@@ -179,7 +179,7 @@
                 </div>
                 <div class="counter-item">
                     <i class="fas fa-dollar-sign"></i>
-                    <div class="counter">$5M+</div>
+                    <div class="counter">1,000,000+</div>
                     <h4>Taxpayer Dollars Returned</h4>
                 </div>
                 <div class="counter-item">
@@ -359,20 +359,33 @@
         const counters = document.querySelectorAll('.counter');
         const speed = 200;
 
+        function formatNumber(num) {
+            if (num >= 1000000) {
+                return num.toLocaleString() + '+';
+            } else if (num >= 1000) {
+                return num.toLocaleString() + '+';
+            }
+            return num.toString();
+        }
+
         function startCounters() {
             counters.forEach(counter => {
+                const target = parseInt(counter.innerText.replace(/[^0-9]/g, ''));
+                const hasPlus = counter.innerText.includes('+');
+                let count = 0;
+                
                 const updateCount = () => {
-                    const target = +counter.getAttribute('data-count');
-                    const count = +counter.innerText;
-                    const inc = target / speed;
-
+                    const increment = Math.ceil(target / speed);
+                    count += increment;
+                    
                     if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
+                        counter.innerText = formatNumber(count);
                         setTimeout(updateCount, 1);
                     } else {
-                        counter.innerText = target;
+                        counter.innerText = formatNumber(target);
                     }
                 };
+                
                 updateCount();
             });
         }

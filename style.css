@@ -916,6 +916,33 @@ footer {
     text-align: center;
 }
 
+@keyframes counterPulse {
+    0% {
+        transform: translateY(-5px) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.05);
+    }
+    100% {
+        transform: translateY(-5px) scale(1);
+    }
+}
+
+@keyframes gradientPulse {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .counter-item {
     text-align: center;
     padding: 2rem;
@@ -942,11 +969,11 @@ footer {
 }
 
 .counter-item:hover {
-    transform: translateY(-5px);
+    animation: counterPulse 1.5s ease-in-out infinite;
 }
 
 .counter-item:hover::before {
-    opacity: 1;
+    animation: gradientPulse 1.5s ease-in-out forwards;
 }
 
 .counter-item i {
