@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Return Estimator - Anitax</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="Logo/anitax-logo-no-words.png" alt="Anitax Logo">
+                    <h1>Anitax</h1>
+                </div>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#our-approach">Our Approach</a></li>
+                        <li class="calculator-dropdown active">
+                            <a href="calculator.html">Calculators</a>
+                            <div class="calculator-menu">
+                                <a href="calculator.html"><i class="fas fa-calculator"></i>Tax Calculator</a>
+                                <a href="tax-return-estimator.html" class="active"><i class="fas fa-file-invoice-dollar"></i>Tax Return Estimator</a>
+                                <a href="super-calculator.html"><i class="fas fa-piggy-bank"></i>Super Calculator</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="calculator-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tax Return Estimator</h2>
+                <p>Estimate your potential tax refund or liability for the current financial year</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h3>Tax Return Calculator</h3>
+                    <p>Enter your details below to estimate your tax return</p>
+                </div>
+                
+                <div class="calculator-body">
+                    <form class="calculator-form" id="taxReturnForm">
+                        <div class="form-group">
+                            <label for="grossIncome">Gross Annual Income ($)</label>
+                            <input type="number" id="grossIncome" name="grossIncome" placeholder="Enter your annual income" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="taxPaid">Tax Already Paid ($)</label>
+                            <input type="number" id="taxPaid" name="taxPaid" placeholder="Enter tax paid through PAYG" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Deductions</label>
+                            <div class="deductions-grid">
+                                <div class="deduction-item">
+                                    <label for="workExpenses">Work Expenses ($)</label>
+                                    <input type="number" id="workExpenses" name="workExpenses" placeholder="0" value="0">
+                                </div>
+                                <div class="deduction-item">
+                                    <label for="charity">Charitable Donations ($)</label>
+                                    <input type="number" id="charity" name="charity" placeholder="0" value="0">
+                                </div>
+                                <div class="deduction-item">
+                                    <label for="education">Education Expenses ($)</label>
+                                    <input type="number" id="education" name="education" placeholder="0" value="0">
+                                </div>
+                                <div class="deduction-item">
+                                    <label for="medical">Medical Expenses ($)</label>
+                                    <input type="number" id="medical" name="medical" placeholder="0" value="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Additional Income</label>
+                            <div class="income-grid">
+                                <div class="income-item">
+                                    <label for="interest">Interest Income ($)</label>
+                                    <input type="number" id="interest" name="interest" placeholder="0" value="0">
+                                </div>
+                                <div class="income-item">
+                                    <label for="dividends">Dividends ($)</label>
+                                    <input type="number" id="dividends" name="dividends" placeholder="0" value="0">
+                                </div>
+                                <div class="income-item">
+                                    <label for="rental">Rental Income ($)</label>
+                                    <input type="number" id="rental" name="rental" placeholder="0" value="0">
+                                </div>
+                                <div class="income-item">
+                                    <label for="other">Other Income ($)</label>
+                                    <input type="number" id="other" name="other" placeholder="0" value="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>HELP/HECS Debt</label>
+                            <div class="hecs-toggle">
+                                <input type="radio" id="hecsNo" name="hecs" value="0" checked>
+                                <label for="hecsNo" class="hecs-option">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>No HELP/HECS Debt</span>
+                                </label>
+                                
+                                <input type="radio" id="hecsYes" name="hecs" value="1">
+                                <label for="hecsYes" class="hecs-option">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Has HELP/HECS Debt</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-block">Calculate Tax Return</button>
+                    </form>
+                    
+                    <div class="calculator-result" id="calculatorResult">
+                        <div class="result-item">
+                            <span class="result-label">Total Income:</span>
+                            <span class="result-value" id="totalIncome">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Deductions:</span>
+                            <span class="result-value" id="totalDeductions">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Taxable Income:</span>
+                            <span class="result-value" id="taxableIncome">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Tax Payable:</span>
+                            <span class="result-value" id="taxPayable">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Tax Paid:</span>
+                            <span class="result-value" id="taxPaid">$0.00</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="result-label">Estimated Refund:</span>
+                            <span class="result-value" id="estimatedRefund">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-info">
+                        <p><i class="fas fa-info-circle"></i> This calculator provides an estimate based on current tax rates and thresholds.</p>
+                        <p><i class="fas fa-exclamation-circle"></i> For accurate tax calculations, please consult with a tax professional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anitax</h3>
+                    <p>Innovative accounting solutions for startups and growing businesses.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#our-approach">Our Approach</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Financial Accounting</a></li>
+                        <li><a href="index.html#services">Tax Planning</a></li>
+                        <li><a href="index.html#services">Startup Advisory</a></li>
+                        <li><a href="index.html#services">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> 0406 205 125</li>
+                        <li><i class="fas fa-envelope"></i> admin@anitax.com.au</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-5PM</li>
+                        <li><i class="fas fa-globe"></i> Remote-first company</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Anitax. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="tax-return-estimator.js"></script>
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navbar = document.getElementById('navbar');
+        
+        mobileToggle.addEventListener('click', function() {
+            navbar.classList.toggle('active');
+        });
+
+        // Calculator Dropdown Mobile Toggle
+        const calculatorDropdown = document.querySelector('.calculator-dropdown');
+        if (calculatorDropdown) {
+            calculatorDropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                }
+            });
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                
+                // Close mobile menu if open
+                navbar.classList.remove('active');
+                if (calculatorDropdown) {
+                    calculatorDropdown.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

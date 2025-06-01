@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator - Anitax</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="Logo/anitax-logo-no-words.png" alt="Anitax Logo">
+                    <h1>Anitax</h1>
+                </div>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#our-approach">Our Approach</a></li>
+                        <li class="calculator-dropdown">
+                            <a href="calculator.html" class="active">Calculators</a>
+                            <div class="calculator-menu">
+                                <a href="calculator.html" class="active"><i class="fas fa-calculator"></i>Tax Calculator</a>
+                                <a href="tax-return-estimator.html"><i class="fas fa-file-invoice-dollar"></i>Tax Return Estimator</a>
+                                <a href="super-calculator.html"><i class="fas fa-piggy-bank"></i>Super Calculator</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="calculator-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tax Calculator</h2>
+                <p>Calculate your estimated tax liability for the current financial year</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h3>Income Tax Calculator</h3>
+                    <p>Enter your details below to calculate your estimated tax</p>
+                </div>
+                
+                <div class="calculator-body">
+                    <form class="calculator-form" id="taxCalculatorForm">
+                        <div class="form-group">
+                            <label for="grossIncome">Gross Annual Income ($)</label>
+                            <input type="number" id="grossIncome" name="grossIncome" placeholder="Enter your annual income" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deductions">Total Deductions ($)</label>
+                            <input type="number" id="deductions" name="deductions" placeholder="Enter your total deductions" value="0">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>HELP/HECS Debt</label>
+                            <div class="hecs-toggle">
+                                <input type="radio" id="hecsNo" name="hecs" value="0" checked>
+                                <label for="hecsNo" class="hecs-option">
+                                    <i class="fas fa-times-circle"></i>
+                                    <span>No HELP/HECS Debt</span>
+                                </label>
+                                
+                                <input type="radio" id="hecsYes" name="hecs" value="1">
+                                <label for="hecsYes" class="hecs-option">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Has HELP/HECS Debt</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-block">Calculate Tax</button>
+                    </form>
+                    
+                    <div class="calculator-result" id="calculatorResult">
+                        <div class="result-item">
+                            <span class="result-label">Taxable Income:</span>
+                            <span class="result-value" id="taxableIncome">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Income Tax:</span>
+                            <span class="result-value" id="incomeTax">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Medicare Levy:</span>
+                            <span class="result-value" id="medicareLevy">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">HELP/HECS Repayment:</span>
+                            <span class="result-value" id="hecsRepayment">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Tax:</span>
+                            <span class="result-value" id="totalTax">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Take Home Pay:</span>
+                            <span class="result-value" id="takeHomePay">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-info">
+                        <p><i class="fas fa-info-circle"></i> This calculator provides an estimate based on current tax rates and thresholds.</p>
+                        <p><i class="fas fa-exclamation-circle"></i> For accurate tax calculations, please consult with a tax professional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anitax</h3>
+                    <p>Innovative accounting solutions for startups and growing businesses.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#our-approach">Our Approach</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Financial Accounting</a></li>
+                        <li><a href="index.html#services">Tax Planning</a></li>
+                        <li><a href="index.html#services">Startup Advisory</a></li>
+                        <li><a href="index.html#services">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> 0800 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> admin@anitax.com.au</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-5PM</li>
+                        <li><i class="fas fa-globe"></i> Remote-first company</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Anitax. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="calculator.js"></script>
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navbar = document.getElementById('navbar');
+        
+        mobileToggle.addEventListener('click', function() {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html> 

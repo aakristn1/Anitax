@@ -22,10 +22,18 @@
                 </div>
                 <nav id="navbar">
                     <ul>
-                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#our-approach">Our Approach</a></li>
+                        <li class="calculator-dropdown">
+                            <a href="calculator.html">Calculators</a>
+                            <div class="calculator-menu">
+                                <a href="calculator.html"><i class="fas fa-calculator"></i>Tax Calculator</a>
+                                <a href="tax-return-estimator.html"><i class="fas fa-file-invoice-dollar"></i>Tax Return Estimator</a>
+                                <a href="super-calculator.html"><i class="fas fa-piggy-bank"></i>Super Calculator</a>
+                            </div>
+                        </li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -36,66 +44,51 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content fade-in">
-                <h2>Innovative Accounting Solutions</h2>
-                <p>Transforming financial management for modern businesses through technology and expertise.</p>
-                <div class="hero-btns">
-                    <a href="contact.html" class="btn">Get Started</a>
-                    <a href="#services" class="btn btn-outline">Our Services</a>
-                </div>
+            <div class="hero-content">
+                <h2>Personal Tax Solutions Made Simple</h2>
+                <p>Expert tax services tailored for individuals. From tax returns to financial planning, we make your tax journey stress-free.</p>
+                <a href="#services" class="btn">Explore Our Services</a>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section-bg">
+    <section id="services" class="services">
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
-                <p>We offer a comprehensive range of accounting solutions designed for startups and growing businesses.</p>
+                <p>Comprehensive tax solutions designed for individuals and families</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Financial Accounting</h3>
-                    <p>Accurate and timely financial statements to help you make informed business decisions.</p>
+                    <i class="fas fa-file-invoice-dollar service-icon"></i>
+                    <h3>Tax Return Preparation</h3>
+                    <p>Professional tax return preparation ensuring you claim all eligible deductions and receive maximum refunds.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                    </div>
+                    <i class="fas fa-calculator service-icon"></i>
                     <h3>Tax Planning</h3>
-                    <p>Strategic tax planning to minimise your tax liability and maximise your savings.</p>
+                    <p>Strategic tax planning to minimise your tax liability and maximise your financial position.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Startup Advisory</h3>
-                    <p>Expert guidance on financial strategy, growth planning, and business optimisation.</p>
+                    <i class="fas fa-piggy-bank service-icon"></i>
+                    <h3>Superannuation Advice</h3>
+                    <p>Expert guidance on superannuation contributions, withdrawals, and retirement planning.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-money-check-alt"></i>
-                    </div>
-                    <h3>Payroll Services</h3>
-                    <p>Comprehensive payroll management to ensure accurate and timely payments.</p>
+                    <i class="fas fa-chart-line service-icon"></i>
+                    <h3>Investment Tax Planning</h3>
+                    <p>Tax-efficient investment strategies to help grow your wealth while minimising tax obligations.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Financial Forecasting</h3>
-                    <p>Future-focused financial projections to help you plan for success and secure investment.</p>
+                    <i class="fas fa-home service-icon"></i>
+                    <h3>Property Tax Services</h3>
+                    <p>Comprehensive tax services for property investments, including rental property deductions and CGT planning.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Digital Transformation</h3>
-                    <p>Modernise your financial processes with our cutting-edge digital solutions.</p>
+                    <i class="fas fa-hand-holding-usd service-icon"></i>
+                    <h3>Financial Planning</h3>
+                    <p>Personalised financial planning to help you achieve your long-term financial goals.</p>
                 </div>
             </div>
         </div>
@@ -105,101 +98,147 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <div class="about-image slide-in-left">
-                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Team">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tax Consultation">
                 </div>
-                <div class="about-text slide-in-right">
-                    <h2>About Anitax</h2>
-                    <p>Founded with a vision to revolutionise accounting for modern businesses, Anitax combines financial expertise with innovative technology.</p>
-                    <p>Our team of certified accountants and tech enthusiasts is committed to delivering accurate, timely, and valuable financial insights to help your startup thrive in today's competitive landscape.</p>
-                    <p>We believe in building long-term partnerships with our clients based on trust, innovation, and exceptional service.</p>
+                <div class="about-text">
+                    <h2>Your Personal Tax Partner</h2>
+                    <p>At Anitax, we understand that tax matters can be complex and overwhelming. Our team of experienced tax professionals is dedicated to providing personalised solutions that make tax time stress-free.</p>
+                    <p>We take the time to understand your unique financial situation and goals, ensuring you receive tailored advice and maximum tax benefits.</p>
                     <div class="about-features">
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Tech-Driven Solutions</span>
+                            <span>Personalised Service</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Startup Specialists</span>
+                            <span>Maximum Tax Benefits</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Agile Approach</span>
+                            <span>Expert Guidance</span>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Growth-Focused</span>
+                            <span>Stress-Free Experience</span>
                         </div>
                     </div>
-                    <a href="contact.html" class="btn">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section id="our-approach" class="our-approach">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Approach</h2>
+                <p>How we make tax simple for you</p>
+            </div>
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Personal Assessment</h3>
+                    <p>We begin by understanding your unique financial situation and goals.</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Tax Optimisation</h3>
+                    <p>We identify all eligible deductions and tax-saving opportunities.</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Accurate Preparation</h3>
+                    <p>We ensure your tax returns are prepared accurately and efficiently.</p>
+                </div>
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Ongoing Support</h3>
+                    <p>We provide continuous guidance and support throughout the year.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Counter Section -->
-    <section class="counter-section section-bg">
+    <section class="counter-section">
         <div class="container">
             <div class="counter-grid">
                 <div class="counter-item">
-                    <i class="fas fa-rocket"></i>
-                    <div class="counter" data-count="50">0</div>
-                    <h4>Startups Helped</h4>
-                </div>
-                <div class="counter-item">
-                    <i class="fas fa-project-diagram"></i>
-                    <div class="counter" data-count="75">0</div>
-                    <h4>Projects Completed</h4>
-                </div>
-                <div class="counter-item">
-                    <i class="fas fa-percentage"></i>
-                    <div class="counter" data-count="30">0</div>
-                    <h4>Average Cost Savings</h4>
-                </div>
-                <div class="counter-item">
                     <i class="fas fa-users"></i>
-                    <div class="counter" data-count="12">0</div>
-                    <h4>Team Members</h4>
+                    <div class="counter">5000+</div>
+                    <h4>Happy Clients</h4>
+                </div>
+                <div class="counter-item">
+                    <i class="fas fa-file-invoice"></i>
+                    <div class="counter">15000+</div>
+                    <h4>Tax Returns Filed</h4>
+                </div>
+                <div class="counter-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div class="counter">$2M+</div>
+                    <h4>Tax Refunds Secured</h4>
+                </div>
+                <div class="counter-item">
+                    <i class="fas fa-star"></i>
+                    <div class="counter">4.9</div>
+                    <h4>Client Satisfaction</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Approach Section (Replacing Testimonials) -->
-    <section id="our-approach" class="our-approach">
+    <!-- FAQ Section -->
+    <section class="faq-section">
         <div class="container">
             <div class="section-title">
-                <h2>Our Approach</h2>
-                <p>How we deliver exceptional financial services for your startup</p>
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our individual tax services</p>
             </div>
-            <div class="approach-grid">
-                <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-lightbulb"></i>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What documents do I need for my tax return?</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <h3>Understand</h3>
-                    <p>We begin by deeply understanding your business, goals, and unique challenges to create customised solutions.</p>
+                    <div class="faq-answer">
+                        <p>You'll need your payment summaries, bank statements, investment statements, work-related expense receipts, and any other income or deduction documentation.</p>
+                    </div>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-cogs"></i>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How much can I claim for work-related expenses?</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <h3>Implement</h3>
-                    <p>Our team implements efficient financial systems and processes tailored to your specific business needs.</p>
+                    <div class="faq-answer">
+                        <p>The amount you can claim depends on your occupation and the expenses you've incurred. We'll help you identify all eligible deductions.</p>
+                    </div>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-chart-bar"></i>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What tax benefits are available for property investors?</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <h3>Analyse</h3>
-                    <p>We provide detailed analytics and insights to help you make data-driven decisions for sustainable growth.</p>
+                    <div class="faq-answer">
+                        <p>Property investors can claim various deductions including interest, repairs, maintenance, and depreciation. We'll help maximise your property tax benefits.</p>
+                    </div>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-icon">
-                        <i class="fas fa-sync-alt"></i>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How can I reduce my tax liability?</h4>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
-                    <h3>Iterate</h3>
-                    <p>As your business evolves, we continuously refine our approach to ensure your financial strategy remains aligned with your goals.</p>
+                    <div class="faq-answer">
+                        <p>We can help you implement various strategies such as salary sacrificing, investment planning, and claiming all eligible deductions to minimise your tax.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,8 +248,8 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Transform Your Startup's Finances?</h2>
-                <p>Contact our team today for a free consultation and discover how we can help your business grow.</p>
+                <h2>Ready to Maximise Your Tax Benefits?</h2>
+                <p>Let us help you navigate your tax obligations and secure the best possible outcome.</p>
                 <a href="contact.html" class="btn">Book a Consultation</a>
             </div>
         </div>
@@ -222,7 +261,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Anitax</h3>
-                    <p>Innovative accounting solutions for startups and growing businesses.</p>
+                    <p>Personalised tax solutions for individuals and families.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -243,10 +282,10 @@
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#services">Financial Accounting</a></li>
+                        <li><a href="#services">Tax Return Preparation</a></li>
                         <li><a href="#services">Tax Planning</a></li>
-                        <li><a href="#services">Startup Advisory</a></li>
-                        <li><a href="#services">Digital Transformation</a></li>
+                        <li><a href="#services">Superannuation Advice</a></li>
+                        <li><a href="#services">Property Tax Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -281,6 +320,17 @@
             navbar.classList.toggle('active');
         });
 
+        // Calculator Dropdown Mobile Toggle
+        const calculatorDropdown = document.querySelector('.calculator-dropdown');
+        if (calculatorDropdown) {
+            calculatorDropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                }
+            });
+        }
+
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -299,6 +349,9 @@
                 
                 // Close mobile menu if open
                 navbar.classList.remove('active');
+                if (calculatorDropdown) {
+                    calculatorDropdown.classList.remove('active');
+                }
             });
         });
 

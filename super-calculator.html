@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superannuation Calculator - Anitax</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="Logo/anitax-logo-no-words.png" alt="Anitax Logo">
+                    <h1>Anitax</h1>
+                </div>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav id="navbar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#our-approach">Our Approach</a></li>
+                        <li class="calculator-dropdown active">
+                            <a href="calculator.html">Calculators</a>
+                            <div class="calculator-menu">
+                                <a href="calculator.html"><i class="fas fa-calculator"></i>Tax Calculator</a>
+                                <a href="tax-return-estimator.html"><i class="fas fa-file-invoice-dollar"></i>Tax Return Estimator</a>
+                                <a href="super-calculator.html" class="active"><i class="fas fa-piggy-bank"></i>Super Calculator</a>
+                            </div>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="calculator-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Superannuation Calculator</h2>
+                <p>Calculate your superannuation growth and retirement projections</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-header">
+                    <h3>Superannuation Projection Calculator</h3>
+                    <p>Enter your details to estimate your superannuation growth</p>
+                </div>
+                
+                <div class="calculator-body">
+                    <form class="calculator-form" id="superCalculatorForm">
+                        <div class="form-group">
+                            <label for="currentAge">Current Age</label>
+                            <input type="number" id="currentAge" name="currentAge" placeholder="Enter your current age" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="retirementAge">Retirement Age</label>
+                            <input type="number" id="retirementAge" name="retirementAge" placeholder="Enter planned retirement age" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentBalance">Current Super Balance ($)</label>
+                            <input type="number" id="currentBalance" name="currentBalance" placeholder="Enter current super balance" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="annualSalary">Annual Salary ($)</label>
+                            <input type="number" id="annualSalary" name="annualSalary" placeholder="Enter your annual salary" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employerContribution">Employer Contribution Rate (%)</label>
+                            <input type="number" id="employerContribution" name="employerContribution" value="10.5" readonly>
+                            <small>Current minimum employer contribution rate</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personalContribution">Personal Contribution Rate (%)</label>
+                            <input type="number" id="personalContribution" name="personalContribution" placeholder="Enter personal contribution rate" value="0">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="investmentReturn">Expected Investment Return (%)</label>
+                            <input type="number" id="investmentReturn" name="investmentReturn" placeholder="Enter expected return rate" value="7">
+                            <small>Default: 7% (historical average)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inflationRate">Expected Inflation Rate (%)</label>
+                            <input type="number" id="inflationRate" name="inflationRate" placeholder="Enter expected inflation rate" value="2.5">
+                            <small>Default: 2.5% (RBA target)</small>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-block">Calculate Projection</button>
+                    </form>
+                    
+                    <div class="calculator-result" id="calculatorResult">
+                        <div class="result-item">
+                            <span class="result-label">Years to Retirement:</span>
+                            <span class="result-value" id="yearsToRetirement">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Total Contributions:</span>
+                            <span class="result-value" id="totalContributions">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Investment Earnings:</span>
+                            <span class="result-value" id="investmentEarnings">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Projected Balance:</span>
+                            <span class="result-value" id="projectedBalance">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Inflation Adjusted Balance:</span>
+                            <span class="result-value" id="inflationAdjustedBalance">$0.00</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="result-label">Monthly Income (30 years):</span>
+                            <span class="result-value" id="monthlyIncome">$0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calculator-info">
+                        <p><i class="fas fa-info-circle"></i> This calculator provides an estimate based on current superannuation rules and assumptions.</p>
+                        <p><i class="fas fa-exclamation-circle"></i> For detailed retirement planning, please consult with a financial advisor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Anitax</h3>
+                    <p>Innovative accounting solutions for startups and growing businesses.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#our-approach">Our Approach</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Financial Accounting</a></li>
+                        <li><a href="index.html#services">Tax Planning</a></li>
+                        <li><a href="index.html#services">Startup Advisory</a></li>
+                        <li><a href="index.html#services">Digital Transformation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> 0406 205 125</li>
+                        <li><i class="fas fa-envelope"></i> admin@anitax.com.au</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-5PM</li>
+                        <li><i class="fas fa-globe"></i> Remote-first company</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Anitax. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="super-calculator.js"></script>
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navbar = document.getElementById('navbar');
+        
+        mobileToggle.addEventListener('click', function() {
+            navbar.classList.toggle('active');
+        });
+
+        // Calculator Dropdown Mobile Toggle
+        const calculatorDropdown = document.querySelector('.calculator-dropdown');
+        if (calculatorDropdown) {
+            calculatorDropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                }
+            });
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                
+                // Close mobile menu if open
+                navbar.classList.remove('active');
+                if (calculatorDropdown) {
+                    calculatorDropdown.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
