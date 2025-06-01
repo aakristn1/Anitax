@@ -26,12 +26,12 @@
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="index.html#about">About</a></li>
                         <li><a href="index.html#our-approach">Our Approach</a></li>
-                        <li class="calculator-dropdown active">
-                            <a href="calculator.html">Calculators</a>
+                        <li class="calculator-dropdown">
+                            <a href="#" class="dropdown-toggle">Calculators</a>
                             <div class="calculator-menu">
-                                <a href="calculator.html"><i class="fas fa-calculator"></i>Tax Calculator</a>
-                                <a href="tax-return-estimator.html"><i class="fas fa-file-invoice-dollar"></i>Tax Return Estimator</a>
-                                <a href="super-calculator.html" class="active"><i class="fas fa-piggy-bank"></i>Super Calculator</a>
+                                <a href="calculator.html" class="calculator-link"><i class="fas fa-calculator"></i>Tax Calculator</a>
+                                <a href="tax-return-estimator.html" class="calculator-link"><i class="fas fa-file-invoice-dollar"></i>Tax Return Estimator</a>
+                                <a href="super-calculator.html" class="calculator-link active"><i class="fas fa-piggy-bank"></i>Super Calculator</a>
                             </div>
                         </li>
                         <li><a href="contact.html">Contact</a></li>
@@ -203,16 +203,35 @@
             navbar.classList.toggle('active');
         });
 
-        // Calculator Dropdown Mobile Toggle
-        const calculatorDropdown = document.querySelector('.calculator-dropdown');
-        if (calculatorDropdown) {
-            calculatorDropdown.addEventListener('click', function(e) {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    this.classList.toggle('active');
+        // Calculator Dropdown Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const calculatorDropdown = document.querySelector('.calculator-dropdown');
+            const dropdownToggle = calculatorDropdown.querySelector('.dropdown-toggle');
+            const calculatorLinks = calculatorDropdown.querySelectorAll('.calculator-link');
+            
+            // Toggle dropdown on main link click
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                calculatorDropdown.classList.toggle('active');
+            });
+
+            // Handle calculator option clicks
+            calculatorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    calculatorDropdown.classList.remove('active');
+                    if (window.innerWidth <= 768) {
+                        navbar.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!calculatorDropdown.contains(e.target)) {
+                    calculatorDropdown.classList.remove('active');
                 }
             });
-        }
+        });
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -232,9 +251,7 @@
                 
                 // Close mobile menu if open
                 navbar.classList.remove('active');
-                if (calculatorDropdown) {
-                    calculatorDropdown.classList.remove('active');
-                }
+                // No need to check calculatorDropdown here, as it's handled by global click listener
             });
         });
     </script>

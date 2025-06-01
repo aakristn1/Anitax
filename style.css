@@ -989,6 +989,41 @@ footer {
     color: #2d3436;
     margin-bottom: 0.5rem;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+/* Special styling for response time counter */
+.counter-item:has(.fa-clock) .counter {
+    padding-right: 40px;
+    transform: translateX(-10px);
+}
+
+.rotating-arrow {
+    font-size: 1.5rem;
+    color: #6c63ff;
+    position: absolute;
+    bottom: -2px;
+    right: 50%;
+    transform: translateX(60px);
+    transition: all 0.3s ease;
+}
+
+@keyframes rotate {
+    from {
+        transform: translateX(60px) rotate(0deg);
+    }
+    to {
+        transform: translateX(60px) rotate(360deg);
+    }
+}
+
+.counter-item:hover .rotating-arrow {
+    color: #fff;
+    animation: rotate 2s linear infinite;
 }
 
 .counter-item h4 {
@@ -1019,6 +1054,11 @@ footer {
     box-shadow: var(--box-shadow);
     margin-bottom: 20px;
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .faq-question {
@@ -1027,34 +1067,40 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.faq-question:hover {
+    background-color: rgba(67, 97, 238, 0.1);
 }
 
 .faq-question h4 {
     margin-bottom: 0;
     font-size: 1.1rem;
     color: var(--text-dark);
+    transition: all 0.3s ease;
 }
 
 .faq-question i {
     color: var(--primary-color);
-    transition: var(--transition);
+    transition: all 0.3s ease;
 }
 
 .faq-answer {
     padding: 0 30px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #fff;
 }
 
 .faq-item.active .faq-question {
-    background-color: var(--primary-light);
-    color: var(--primary-dark);
+    background-color: rgba(67, 97, 238, 0.1);
 }
 
 .faq-item.active .faq-question h4 {
-    color: var(--primary-dark);
+    color: var(--primary-color);
 }
 
 .faq-item.active .faq-question i {
@@ -1063,7 +1109,7 @@ footer {
 
 .faq-item.active .faq-answer {
     max-height: 200px;
-    padding: 0 30px 20px;
+    padding: 20px 30px;
 }
 
 /* =================== 15. CTA Section =================== */
