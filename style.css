@@ -917,35 +917,63 @@ footer {
 }
 
 .counter-item {
-    background-color: var(--bg-light);
-    padding: 40px 20px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
+    text-align: center;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.counter-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6c63ff 0%, #4a45b1 100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
 }
 
 .counter-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.counter-item:hover::before {
+    opacity: 1;
 }
 
 .counter-item i {
     font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
+    color: #6c63ff;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
 }
 
-.counter {
-    font-size: 3rem;
+.counter-item .counter {
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 10px;
+    color: #2d3436;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
 }
 
 .counter-item h4 {
     font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 0;
+    color: #636e72;
+    transition: all 0.3s ease;
+}
+
+.counter-item:hover i,
+.counter-item:hover .counter,
+.counter-item:hover h4 {
+    color: #fff;
 }
 
 /* =================== 14. FAQ Section =================== */
