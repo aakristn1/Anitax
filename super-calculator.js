@@ -108,18 +108,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add age validation
-    document.getElementById('currentAge').addEventListener('input', function() {
-        const retirementAge = document.getElementById('retirementAge');
-        if (parseInt(this.value) >= parseInt(retirementAge.value)) {
-            retirementAge.value = parseInt(this.value) + 1;
-        }
-    });
-
-    document.getElementById('retirementAge').addEventListener('input', function() {
-        const currentAge = document.getElementById('currentAge');
-        if (parseInt(this.value) <= parseInt(currentAge.value)) {
-            this.value = parseInt(currentAge.value) + 1;
+    // Add age validation only on form submission
+    form.addEventListener('submit', function(e) {
+        const currentAge = parseInt(document.getElementById('currentAge').value);
+        const retirementAge = parseInt(document.getElementById('retirementAge').value);
+        
+        if (currentAge && retirementAge && currentAge >= retirementAge) {
+            e.preventDefault();
+            alert('Retirement age must be greater than current age');
+            return false;
         }
     });
 }); 

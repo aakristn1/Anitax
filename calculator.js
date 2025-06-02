@@ -41,25 +41,32 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         // Get form values
-        const grossIncome = parseFloat(document.getElementById('grossIncome').value);
+        const grossIncome = parseFloat(document.getElementById('grossIncome').value) || 0;
         const deductions = parseFloat(document.getElementById('deductions').value) || 0;
-        const hasHecs = document.getElementById('hecs').value === '1';
+        const hasHecs = document.querySelector('input[name="hecs"]:checked').value === '1';
         
         // Calculate taxable income
         const taxableIncome = Math.max(0, grossIncome - deductions);
         
         // Calculate income tax
         let incomeTax = 0;
-        for (let i = taxThresholds.length - 1; i >= 0; i--) {
+        for (let i = 0; i < taxThresholds.length - 1; i++) {
             const currentThreshold = taxThresholds[i];
             const nextThreshold = taxThresholds[i + 1];
             
             if (taxableIncome > currentThreshold.threshold) {
-                const taxableAmount = nextThreshold 
-                    ? Math.min(taxableIncome - currentThreshold.threshold, nextThreshold.threshold - currentThreshold.threshold)
-                    : taxableIncome - currentThreshold.threshold;
+                const taxableAmount = Math.min(
+                    taxableIncome - currentThreshold.threshold,
+                    nextThreshold.threshold - currentThreshold.threshold
+                );
                 incomeTax += taxableAmount * currentThreshold.rate;
             }
+        }
+        
+        // Add tax for the highest bracket if applicable
+        const highestThreshold = taxThresholds[taxThresholds.length - 1];
+        if (taxableIncome > highestThreshold.threshold) {
+            incomeTax += (taxableIncome - highestThreshold.threshold) * highestThreshold.rate;
         }
         
         // Calculate Medicare Levy
