@@ -990,6 +990,42 @@ footer {
     margin-bottom: 10px;
     position: relative;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Special styling for response time counter with rotating arrow */
+.counter-item:has(.fa-clock) .counter {
+    gap: 20px;
+}
+
+.rotating-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-left: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.counter-item:hover .rotating-arrow {
+    color: white;
+    animation: rotate 2s linear infinite;
+}
+
+.rotating-arrow.paused {
+    animation: none;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .counter-item h4 {
