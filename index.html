@@ -26,14 +26,7 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#our-approach">Our Approach</a></li>
-                        <li class="calculator-dropdown">
-                            <a href="#" class="dropdown-toggle">Calculators</a>
-                            <div class="calculator-menu">
-                                <a href="calculator.html" class="calculator-link"><i class="fas fa-calculator"></i>Tax Calculator</a>
-                                <a href="tax-return-estimator.html" class="calculator-link"><i class="fas fa-file-invoice-dollar"></i>Tax Return Estimator</a>
-                                <a href="super-calculator.html" class="calculator-link"><i class="fas fa-piggy-bank"></i>Super Calculator</a>
-                            </div>
-                        </li>
+                        <li><a href="calculator.html">Tax Calculator</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -41,16 +34,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Personal Tax Solutions Made Simple</h2>
-                <p>Expert tax services tailored for individuals. From tax returns to financial planning, we make your tax journey stress-free.</p>
-                <a href="#services" class="btn">Explore Our Services</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -76,11 +59,6 @@
                     <p>Expert assistance with setting up companies, trusts, and self-managed superannuation funds. We guide you through the entire formation process and ensure compliance with all regulatory requirements.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-chart-line service-icon"></i>
-                    <h3>Investment Tax Planning</h3>
-                    <p>Tax-efficient investment strategies to help grow your wealth while minimising tax obligations.</p>
-                </div>
-                <div class="service-card">
                     <i class="fas fa-book service-icon"></i>
                     <h3>Bookkeeping Services</h3>
                     <p>Comprehensive bookkeeping services to keep your financial records accurate and up-to-date. We handle all your day-to-day accounting needs, from transaction recording to financial statement preparation.</p>
@@ -97,32 +75,14 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
+            <div class="section-title">
+                <h2>Your Personal Tax Partner</h2>
+            </div>
             <div class="about-content">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tax Consultation">
-                </div>
                 <div class="about-text">
-                    <h2>Your Personal Tax Partner</h2>
-                    <p>At Anitax, we understand that tax matters can be complex and overwhelming. Our team of experienced tax professionals is dedicated to providing personalised solutions that make tax time stress-free.</p>
-                    <p>We take the time to understand your unique financial situation and goals, ensuring you receive tailored advice and maximum tax benefits.</p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Personalised Service</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Maximum Tax Benefits</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Expert Guidance</span>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Stress-Free Experience</span>
-                        </div>
-                    </div>
+                    <p>At Anitax, I understand that tax matters can be complex and overwhelming. As a dedicated tax professional, I'm committed to providing personalised solutions that make tax time stress-free.</p>
+                    <p>I take the time to understand your unique financial situation and goals, ensuring you receive tailored advice and maximum tax benefits. Whether you're an individual, small business owner, or property investor, I'm here to guide you through every step of the process.</p>
+                    <p class="disclaimer"><strong>Anitax Accounting Services is a CPA practice, Liability limited by a scheme approved under Professional Standards legislation.</strong></p>
                 </div>
             </div>
         </div>
@@ -320,35 +280,6 @@
             navbar.classList.toggle('active');
         });
 
-        // Calculator Dropdown Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const calculatorDropdown = document.querySelector('.calculator-dropdown');
-            const dropdownToggle = calculatorDropdown.querySelector('.dropdown-toggle');
-            const calculatorLinks = calculatorDropdown.querySelectorAll('.calculator-link');
-            
-            // Toggle dropdown on main link click
-            dropdownToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                calculatorDropdown.classList.toggle('active');
-            });
-
-            // Handle calculator option clicks
-            calculatorLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    calculatorDropdown.classList.remove('active');
-                    if (window.innerWidth <= 768) {
-                        navbar.classList.remove('active');
-                    }
-                });
-            });
-
-            // Close dropdown when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!calculatorDropdown.contains(e.target)) {
-                    calculatorDropdown.classList.remove('active');
-                }
-            });
-        });
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -368,9 +299,6 @@
                 
                 // Close mobile menu if open
                 navbar.classList.remove('active');
-                if (calculatorDropdown) {
-                    calculatorDropdown.classList.remove('active');
-                }
             });
         });
 

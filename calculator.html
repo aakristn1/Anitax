@@ -26,14 +26,7 @@
                         <li><a href="index.html#services">Services</a></li>
                         <li><a href="index.html#about">About</a></li>
                         <li><a href="index.html#our-approach">Our Approach</a></li>
-                        <li class="calculator-dropdown">
-                            <a href="calculator.html" class="active">Calculators</a>
-                            <div class="calculator-menu">
-                                <a href="calculator.html" class="active"><i class="fas fa-calculator"></i>Tax Calculator</a>
-                                <a href="tax-return-estimator.html"><i class="fas fa-file-invoice-dollar"></i>Tax Return Estimator</a>
-                                <a href="super-calculator.html"><i class="fas fa-piggy-bank"></i>Super Calculator</a>
-                            </div>
-                        </li>
+                        <li><a href="calculator.html" class="active">Tax Calculator</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
@@ -50,31 +43,31 @@
             
             <div class="calculator-container">
                 <div class="calculator-header">
-                    <h3>Income Tax Calculator</h3>
-                    <p>Enter your details below to calculate your estimated tax</p>
+                    <h3>Simple Tax Calculator</h3>
+                    <p>Enter your annual income to get an instant tax estimate</p>
                 </div>
                 
                 <div class="calculator-body">
                     <form class="calculator-form" id="taxCalculatorForm">
                         <div class="form-group">
                             <label for="grossIncome">Gross Annual Income ($)</label>
-                            <input type="number" id="grossIncome" name="grossIncome" placeholder="Enter your annual income" required>
+                            <input type="number" id="grossIncome" name="grossIncome" placeholder="Enter your annual income" required step="0.01">
                         </div>
-                        
+
                         <div class="form-group">
-                            <label for="deductions">Total Deductions ($)</label>
-                            <input type="number" id="deductions" name="deductions" placeholder="Enter your total deductions" value="0">
+                            <label for="deductions">Total Tax Deductions ($)</label>
+                            <input type="number" id="deductions" name="deductions" placeholder="Work expenses, donations, etc." value="0" step="0.01">
                         </div>
-                        
+
                         <div class="form-group">
-                            <label>HELP/HECS Debt</label>
+                            <label>HELP/HECS Debt Status</label>
                             <div class="hecs-toggle">
                                 <input type="radio" id="hecsNo" name="hecs" value="0" checked>
                                 <label for="hecsNo" class="hecs-option">
                                     <i class="fas fa-times-circle"></i>
                                     <span>No HELP/HECS Debt</span>
                                 </label>
-                                
+
                                 <input type="radio" id="hecsYes" name="hecs" value="1">
                                 <label for="hecsYes" class="hecs-option">
                                     <i class="fas fa-check-circle"></i>
@@ -82,40 +75,50 @@
                                 </label>
                             </div>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-block">Calculate Tax</button>
                     </form>
-                    
+
                     <div class="calculator-result" id="calculatorResult">
+                        <h4>Tax Calculation Results</h4>
+                        <div class="result-item">
+                            <span class="result-label">Gross Income:</span>
+                            <span class="result-value" id="taxableIncome">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Less Deductions:</span>
+                            <span class="result-value" id="deductionsDisplay">$0.00</span>
+                        </div>
                         <div class="result-item">
                             <span class="result-label">Taxable Income:</span>
-                            <span class="result-value" id="taxableIncome">$0.00</span>
+                            <span class="result-value" id="finalTaxableIncome">$0.00</span>
                         </div>
                         <div class="result-item">
                             <span class="result-label">Income Tax:</span>
                             <span class="result-value" id="incomeTax">$0.00</span>
                         </div>
                         <div class="result-item">
-                            <span class="result-label">Medicare Levy:</span>
+                            <span class="result-label">Medicare Levy (2%):</span>
                             <span class="result-value" id="medicareLevy">$0.00</span>
                         </div>
-                        <div class="result-item">
+                        <div class="result-item" id="hecsRepaymentRow" style="display: none;">
                             <span class="result-label">HELP/HECS Repayment:</span>
                             <span class="result-value" id="hecsRepayment">$0.00</span>
                         </div>
-                        <div class="result-item">
-                            <span class="result-label">Total Tax:</span>
+                        <div class="result-item result-total">
+                            <span class="result-label">Total Tax Payable:</span>
                             <span class="result-value" id="totalTax">$0.00</span>
                         </div>
-                        <div class="result-item">
-                            <span class="result-label">Take Home Pay:</span>
+                        <div class="result-item result-takeHome">
+                            <span class="result-label">Annual Take Home Pay:</span>
                             <span class="result-value" id="takeHomePay">$0.00</span>
                         </div>
                     </div>
-                    
+
                     <div class="calculator-info">
-                        <p><i class="fas fa-info-circle"></i> This calculator provides an estimate based on current tax rates and thresholds.</p>
-                        <p><i class="fas fa-exclamation-circle"></i> For accurate tax calculations, please consult with a tax professional.</p>
+                        <p><i class="fas fa-info-circle"></i> This calculator provides an estimate based on 2025-2026 Australian tax rates and thresholds.</p>
+                        <p><i class="fas fa-exclamation-circle"></i> Tax rates and thresholds are subject to change in accordance with annual budget updates and legislative amendments. This calculator is intended for estimation purposes only and should not be considered as a guarantee of final tax liability.</p>
+                        <p><i class="fas fa-warning"></i> For accurate tax calculations and personalised advice tailored to your specific circumstances, we recommend consulting with a qualified tax professional.</p>
                     </div>
                 </div>
             </div>
@@ -171,8 +174,105 @@
         </div>
     </footer>
 
-    <script src="calculator.js"></script>
     <script>
+        // 2024-2025 Australian Tax Rates and Thresholds
+        const TAX_BRACKETS = [
+            { min: 0, max: 18200, rate: 0 },
+            { min: 18200, max: 45000, rate: 0.19 },
+            { min: 45000, max: 120000, rate: 0.325 },
+            { min: 120000, max: 180000, rate: 0.37 },
+            { min: 180000, max: Infinity, rate: 0.45 }
+        ];
+
+        const MEDICARE_LEVY_RATE = 0.02;
+        const HELP_REPAYMENT_RATE = 0.08; // Simplified rate
+
+        function calculateTax(grossIncome, deductions, hasHecs) {
+            // Calculate taxable income
+            const taxableIncome = Math.max(0, grossIncome - deductions);
+
+            // Calculate income tax
+            let incomeTax = 0;
+            for (let bracket of TAX_BRACKETS) {
+                if (taxableIncome > bracket.min) {
+                    const incomeInBracket = Math.min(taxableIncome, bracket.max) - bracket.min;
+                    incomeTax += incomeInBracket * bracket.rate;
+                }
+            }
+
+            // Calculate Medicare Levy
+            const medicareLevy = taxableIncome * MEDICARE_LEVY_RATE;
+
+            // Calculate HECS/HELP repayment if applicable
+            let hecsRepayment = 0;
+            if (hasHecs && taxableIncome > 45881) {
+                hecsRepayment = Math.max(0, (taxableIncome - 45881) * HELP_REPAYMENT_RATE);
+            }
+
+            // Calculate totals
+            const totalTax = incomeTax + medicareLevy + hecsRepayment;
+            const takeHomePay = grossIncome - totalTax;
+
+            return {
+                taxableIncome,
+                incomeTax,
+                medicareLevy,
+                hecsRepayment,
+                totalTax,
+                takeHomePay
+            };
+        }
+
+        function formatCurrency(value) {
+            return new Intl.NumberFormat('en-AU', {
+                style: 'currency',
+                currency: 'AUD',
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            }).format(value);
+        }
+
+        // Form submission
+        document.getElementById('taxCalculatorForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const grossIncome = parseFloat(document.getElementById('grossIncome').value);
+            const deductions = parseFloat(document.getElementById('deductions').value) || 0;
+            const hasHecs = document.querySelector('input[name="hecs"]:checked').value === '1';
+
+            if (isNaN(grossIncome) || grossIncome < 0) {
+                alert('Please enter a valid income amount');
+                return;
+            }
+
+            const results = calculateTax(grossIncome, deductions, hasHecs);
+
+            // Update result display
+            document.getElementById('taxableIncome').textContent = formatCurrency(grossIncome);
+            document.getElementById('deductionsDisplay').textContent = formatCurrency(deductions);
+            document.getElementById('finalTaxableIncome').textContent = formatCurrency(results.taxableIncome);
+            document.getElementById('incomeTax').textContent = formatCurrency(results.incomeTax);
+            document.getElementById('medicareLevy').textContent = formatCurrency(results.medicareLevy);
+            document.getElementById('hecsRepayment').textContent = formatCurrency(results.hecsRepayment);
+            document.getElementById('totalTax').textContent = formatCurrency(results.totalTax);
+            document.getElementById('takeHomePay').textContent = formatCurrency(results.takeHomePay);
+
+            // Show results container
+            const resultContainer = document.getElementById('calculatorResult');
+            resultContainer.classList.add('active');
+
+            // Show/hide HECS repayment row
+            const hecsRow = document.getElementById('hecsRepaymentRow');
+            if (hasHecs && results.hecsRepayment > 0) {
+                hecsRow.style.display = 'flex';
+            } else {
+                hecsRow.style.display = 'none';
+            }
+
+            // Scroll to results
+            document.getElementById('calculatorResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
         // Sticky Header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');

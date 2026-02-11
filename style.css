@@ -320,6 +320,11 @@ nav ul li a.active {
 }
 
 /* =================== 6. Service Cards =================== */
+.services {
+    padding: 120px 0 60px;
+    margin-top: 80px;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -374,11 +379,15 @@ nav ul li a.active {
 }
 
 /* =================== 7. About Section =================== */
+.about {
+    padding: 100px 0;
+    background-color: var(--bg-alt);
+}
+
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .about-image {
@@ -405,23 +414,33 @@ nav ul li a.active {
 .about-text h2 {
     margin-bottom: 25px;
     position: relative;
-    display: inline-block;
+    display: block;
 }
 
 .about-text h2::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 70px;
-    height:
-    4px;
+    height: 4px;
     background-color: var(--primary-color);
     border-radius: 2px;
 }
 
 .about-text p {
     margin-bottom: 20px;
+    text-align: left;
+}
+
+.about-text p.disclaimer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--primary-color);
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
 }
 
 /* =================== 8. Our Approach Section =================== */
@@ -770,23 +789,6 @@ footer {
 @media (max-width: 992px) {
     header {
         padding: 15px 0;
-    }
-    
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .about-image {
-        order: 1;
-        margin-top: 40px;
-    }
-    
-    .about-text {
-        order: 0;
-    }
-    
-    .about-image::before {
-        display: none;
     }
     
     section {
@@ -1562,6 +1564,7 @@ footer {
     padding: 50px 40px;
 }
 
+
 .calculator-form .form-group {
     margin-bottom: 25px;
 }
@@ -1611,16 +1614,41 @@ footer {
     display: block;
 }
 
+.calculator-result h4 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
 .result-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.95rem;
 }
 
 .result-item:last-child {
     border-bottom: none;
+}
+
+.result-item.result-total {
+    padding: 15px 0;
+    margin-top: 10px;
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    font-weight: 600;
+}
+
+.result-item.result-takeHome {
+    padding: 15px 0;
+    margin-top: 10px;
+    background-color: rgba(67, 97, 238, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
 }
 
 .result-label {
@@ -1631,6 +1659,7 @@ footer {
 .result-value {
     font-weight: 600;
     color: var(--primary-dark);
+    text-align: right;
 }
 
 .calculator-info {
