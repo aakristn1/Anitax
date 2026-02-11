@@ -22,7 +22,7 @@
                 </div>
                 <nav id="navbar">
                     <ul>
-                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="#" class="active">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#our-approach">Our Approach</a></li>
@@ -34,6 +34,17 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Your Trusted Tax & Accounting Partner</h2>
+            <p>Expert accounting solutions designed to simplify your financial life and maximize your returns</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn">Explore Services</a>
+                <a href="contact.html" class="btn btn-outline">Book a Consultation</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -151,6 +162,60 @@
                     <i class="fas fa-users"></i>
                     <div class="counter">1000+</div>
                     <h4>Satisfied Clients</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Anitax?</h2>
+                <p>Dedicated expertise you can trust</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>CPA Qualified</h3>
+                    <p>Certified professional with extensive knowledge of Australian tax law and accounting standards.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Personalised Service</h3>
+                    <p>Direct access to your tax professional with tailored advice that suits your specific needs.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Confidential & Secure</h3>
+                    <p>Your financial information is protected with professional confidentiality and industry-standard security.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Cost-Effective Solutions</h3>
+                    <p>Competitive pricing without compromising on quality or the depth of service provided.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Responsive Support</h3>
+                    <p>Quick response times and ongoing availability to address your questions and concerns.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Continuous Improvement</h3>
+                    <p>Staying updated with the latest tax legislation and industry best practices to benefit you.</p>
                 </div>
             </div>
         </div>
@@ -287,7 +352,13 @@
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if (targetId !== '#') {
+                if (targetId === '#') {
+                    // Home link - scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else if (targetId !== '#') {
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         window.scrollTo({
